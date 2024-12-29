@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Characters - Monster Hunter Wilds</title>
+        <meta name="description" content="Meet the characters of Monster Hunter Wilds. Learn about the hunters, companions, and NPCs that will aid you on your journey through the Forbidden Lands.">
+        <meta name="keywords" content="Monster Hunter Wilds characters, Alma, Gemma, Nata, Athos, Olivia, Erik, Fabius, Werner, monster hunter NPCs, hunting companions">
+        <link rel="icon" href="static/favicon.ico" sizes="32x32"/>
+        <!-- Open Graph tags -->
+        <meta property="og:title" content="Characters - Monster Hunter Wilds">
+        <meta property="og:description" content="Discover the legendary hunters and remarkable personalities who will shape your journey through the mysterious Forbidden Lands. Meet Alma, Gemma, Werner, and other key characters who will aid your adventure.">
+        <meta property="og:image" content="https://monsterhunterwilds.org/static/images/characters-bg.jpg">
+        <meta property="og:url" content="https://monsterhunterwilds.org/characters">
+        
+        <!-- Twitter Card tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Characters - Monster Hunter Wilds">
+        <meta name="twitter:description" content="Meet the legendary hunters and remarkable personalities who will shape your journey through the Forbidden Lands. Each character brings unique abilities and expertise to your adventure.">
+        <meta name="twitter:image" content="https://monsterhunterwilds.org/static/images/characters-bg.jpg">
+        
+        <style>
+            /* Reset and base styles */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.6;
+                color: #333;
+                background-color: #0a0a0a;
+            }
+
+            .container {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            /* Header styles - same as index.html */
+            header {
+                background-color: rgba(0, 0, 0, 0.9);
+                position: fixed;
+                width: 100%;
+                z-index: 1000;
+                padding: 15px 0;
+            }
+
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+
+            nav ul {
+                display: flex;
+                list-style: none;
+                gap: 30px;
+            }
+
+            nav a {
+                color: #fff;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s ease;
+            }
+
+            nav a:hover {
+                color: #ffd700;
+            }
+
+            .pre-order a {
+                background-color: #ffd700;
+                color: #000;
+                padding: 10px 20px;
+                border-radius: 25px;
+                font-weight: bold;
+            }
+
+            .pre-order a:hover {
+                background-color: #fff;
+                color: #000;
+            }
+
+            /* Characters specific styles */
+            .characters-hero {
+                padding-top: 120px;
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                            url('static/images/characters-bg.jpg') no-repeat center center;
+                background-size: cover;
+                color: #fff;
+                text-align: center;
+                padding-bottom: 80px;
+                position: relative;
+            }
+
+            .characters-hero::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 100px;
+                background: linear-gradient(to bottom, transparent, #0a0a0a);
+            }
+
+            .characters-hero h1 {
+                font-size: 4rem;
+                margin-bottom: 20px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                font-weight: 800;
+                letter-spacing: 2px;
+            }
+
+            .characters-hero p {
+                font-size: 1.4rem;
+                max-width: 800px;
+                margin: 0 auto;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            }
+
+            /* Character Grid */
+            .character-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                gap: 40px;
+                padding: 60px 0;
+            }
+
+            .character-card {
+                background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                transition: transform 0.4s ease, box-shadow 0.4s ease;
+                position: relative;
+                cursor: pointer;
+            }
+
+            .character-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
+            }
+
+            .character-image {
+                position: relative;
+                height: 500px;
+                overflow: hidden;
+            }
+
+            .character-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.4s ease;
+            }
+
+            .character-card:hover .character-image img {
+                transform: scale(1.05);
+            }
+
+            .character-info {
+                padding: 30px;
+                background: linear-gradient(to top, #1a1a1a, transparent);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                color: #fff;
+            }
+
+            .character-info h3 {
+                font-size: 2rem;
+                margin-bottom: 10px;
+                color: #ffd700;
+                text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            }
+
+            .character-info .role {
+                color: #fff;
+                font-size: 1.2rem;
+                margin-bottom: 15px;
+                font-weight: 500;
+            }
+
+            .character-info p {
+                font-size: 1rem;
+                color: #ddd;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease;
+            }
+
+            .character-card:hover .character-info p {
+                max-height: 200px;
+            }
+
+            .character-stats {
+                display: flex;
+                gap: 20px;
+                margin-top: 15px;
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.4s ease, transform 0.4s ease;
+            }
+
+            .character-card:hover .character-stats {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .stat {
+                background: rgba(255, 215, 0, 0.1);
+                padding: 5px 15px;
+                border-radius: 15px;
+                font-size: 0.9rem;
+                color: #ffd700;
+            }
+
+            /* Character Modal */
+            .character-modal {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.9);
+                z-index: 2000;
+            }
+
+            .modal-content {
+                position: relative;
+                max-width: 1000px;
+                margin: 50px auto;
+                background: #fff;
+                border-radius: 15px;
+                overflow: hidden;
+            }
+
+            .modal-close {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                font-size: 2rem;
+                color: #fff;
+                cursor: pointer;
+                z-index: 2001;
+            }
+
+            /* Footer styles - same as index.html */
+            footer {
+                background-color: #1a1a1a;
+                color: #fff;
+                padding: 60px 0 20px;
+            }
+
+            .footer-content {
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                gap: 40px;
+                margin-bottom: 40px;
+            }
+
+            .footer-logo img {
+                height: 60px;
+                margin-bottom: 20px;
+            }
+
+            .footer-links {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 30px;
+            }
+
+            .footer-column h3 {
+                color: #ffd700;
+                margin-bottom: 20px;
+                font-size: 1.2rem;
+            }
+
+            .footer-column ul {
+                list-style: none;
+            }
+
+            .footer-column ul li {
+                margin-bottom: 10px;
+            }
+
+            .footer-column a {
+                color: #fff;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            .footer-column a:hover {
+                color: #ffd700;
+            }
+
+            .footer-bottom {
+                text-align: center;
+                padding-top: 20px;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            /* Responsive design */
+            @media (max-width: 768px) {
+                nav ul {
+                    display: none;
+                }
+
+                .characters-hero h1 {
+                    font-size: 2.5rem;
+                }
+
+                .character-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .character-image {
+                    height: 400px;
+                }
+
+                .footer-content {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="static/logo.png" alt="Monster Hunter Wilds Logo">
+                </div>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/characters">Characters</a></li>
+                    <li><a href="/monsters">Monsters</a></li>
+                    <li><a href="/product">Product</a></li>
+                    <li><a href="/media">Media</a></li>
+                    <li><a href="/news">News</a></li>
+                    <li class="pre-order"><a href="#pre-order">Pre-order Now</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="characters-hero">
+                <div class="container">
+                    <h1>Characters</h1>
+                    <p>Discover the legendary hunters and remarkable personalities who will shape your journey through the mysterious Forbidden Lands. Each character brings unique abilities, stories, and expertise to your adventure.</p>
+                </div>
+            </section>
+
+            <section class="character-categories">
+                <div class="container">
+                    <div class="character-grid">
+                        <!-- Alma -->
+                        <div class="character-card">
+                            <div class="character-image">
+                                <img src="static/images/characters/alma2_npcs_monster_hunter_wilds.png" alt="Alma - Elite Hunter">
+                            </div>
+                            <div class="character-info">
+                                <h3>Alma</h3>
+                                <div class="role">Elite Hunter</div>
+                                <p>A skilled hunter known for her exceptional tracking abilities and mastery of multiple weapon types. Her deep understanding of monster behavior makes her an invaluable mentor to new hunters.</p>
+                                <div class="character-stats">
+                                    <span class="stat">Master Hunter</span>
+                                    <span class="stat">Mentor</span>
+                                    <span class="stat">Strategist</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gemma -->
+                        <div class="character-card">
+                            <div class="character-image">
+                                <img src="static/images/characters/gemma2_npcs_monster_hunter_wilds.png" alt="Gemma - Research Scholar">
+                            </div>
+                            <div class="character-info">
+                                <h3>Gemma</h3>
+                                <div class="role">Research Scholar</div>
+                                <p>A brilliant researcher specializing in monster ecology and ancient civilizations. Her research has been crucial in understanding the mysteries of the Forbidden Lands and its unique ecosystem.</p>
+                                <div class="character-stats">
+                                    <span class="stat">Scholar</span>
+                                    <span class="stat">Researcher</span>
+                                    <span class="stat">Analyst</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Nata -->
+                        <div class="character-card">
+                            <div class="character-image">
+                                <img src="static/images/characters/nata2_npcs_monster_hunter_monster_hunter_wilds.png" alt="Nata - Supply Master">
+                            </div>
+                            <div class="character-info">
+                                <h3>Nata</h3>
+                                <div class="role">Supply Master</div>
+                                <p>The resourceful supply master who ensures hunters are well-equipped for their missions. Her expertise in resource management and item crafting is essential for the success of every expedition.</p>
+                                <div class="character-stats">
+                                    <span class="stat">Logistics</span>
+                                    <span class="stat">Crafting</span>
+                                    <span class="stat">Management</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Athos -->
+                        <div class="character-card">
+                            <div class="character-image">
+                                <img src="static/images/characters/athos2_npcs_monster_hunter_monster_hunter_wilds.png" alt="Athos - Veteran Commander">
+                            </div>
+                            <div class="character-info">
+                                <h3>Athos</h3>
+                                <div class="role">Veteran Commander</div>
+                                <p>A seasoned hunter commander who leads the defense of the research base. His tactical expertise and years of experience make him an invaluable leader in critical situations.</p>
+                                <div class="character-stats">
+                                    <span class="stat">Leader</span>
+                                    <span class="stat">Tactician</span>
+                                    <span class="stat">Veteran</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Olivia -->
+                        <div class="character-card">
+                            <div class="character-image">
+                                <img src="static/images/characters/olivia2_npcs_monster_hunter_monster_hunter_wilds.png" alt="Olivia - Quest Manager">
+                            </div>
+                            <div class="character-info">
+                                <h3>Olivia</h3>
+                                <div class="role">Quest Manager</div>
+                                <p>The dedicated quest manager who coordinates hunting assignments and expedition planning. Her attention to detail and organizational skills ensure smooth operations at the hunting base.</p>
+                                <div class="character-stats">
+                                    <span class="stat">Coordinator</span>
+                                    <span class="stat">Planner</span>
+                                    <span class="stat">Support</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Erik -->
+                        <div class="character-card">
+                            <div class="character-image">
+                                <img src="static/images/characters/erik1_npcs_monster_hunter_monster_hunter_wilds.png" alt="Erik - Master Blacksmith">
+                            </div>
+                            <div class="character-info">
+                                <h3>Erik</h3>
+                                <div class="role">Master Blacksmith</div>
+                                <p>A legendary blacksmith whose craftsmanship is renowned throughout the hunting world. His ability to forge powerful weapons and armor from monster materials is unmatched.</p>
+                                <div class="character-stats">
+                                    <span class="stat">Craftsman</span>
+                                    <span class="stat">Weaponsmith</span>
+                                    <span class="stat">Innovator</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fabius -->
+                        <div class="character-card">
+                            <div class="character-image">
+                                <img src="static/images/characters/fabius_npcs_monster_hunter_monster_hunter_wilds.png" alt="Fabius - Trade Master">
+                            </div>
+                            <div class="character-info">
+                                <h3>Fabius</h3>
+                                <div class="role">Trade Master</div>
+                                <p>The charismatic merchant who manages the trading post. His vast network of contacts and keen business sense ensure a steady flow of rare materials and essential supplies.</p>
+                                <div class="character-stats">
+                                    <span class="stat">Merchant</span>
+                                    <span class="stat">Negotiator</span>
+                                    <span class="stat">Supplier</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Werner -->
+                        <div class="character-card">
+                            <div class="character-image">
+                                <img src="static/images/characters/werner_npcs_monster_hunter_monster_hunter_wilds.png" alt="Werner - Research Director">
+                            </div>
+                            <div class="character-info">
+                                <h3>Werner</h3>
+                                <div class="role">Research Director</div>
+                                <p>A distinguished scholar and leader of the Research Commission. His groundbreaking research into monster ecology and ancient civilizations has revolutionized our understanding of the Forbidden Lands.</p>
+                                <div class="character-stats">
+                                    <span class="stat">Director</span>
+                                    <span class="stat">Scholar</span>
+                                    <span class="stat">Visionary</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <img src="static/logo.png" alt="Monster Hunter Wilds Logo">
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li><a href="/characters">Characters</a></li>
+                                <li><a href="/monsters">Monsters</a></li>
+                                <li><a href="/product">Product</a></li>
+                                <li><a href="/media">Media</a></li>
+                                <li><a href="/news">News</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Support</h3>
+                            <ul>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Monster Hunter Wilds. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Add smooth reveal animation on scroll
+            document.addEventListener('DOMContentLoaded', () => {
+                const cards = document.querySelectorAll('.character-card');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = 1;
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+
+                cards.forEach(card => {
+                    card.style.opacity = 0;
+                    card.style.transform = 'translateY(50px)';
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    observer.observe(card);
+                });
+            });
+        </script>
+    </body>
+</html>

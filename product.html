@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Monster Hunter Wilds - Pre-order & Editions</title>
+        <meta name="description" content="Pre-order Monster Hunter Wilds now and embark on a thrilling new hunting adventure. Choose from Standard, Deluxe, and Collector's editions with exclusive content.">
+        
+        <!-- Open Graph tags -->
+        <meta property="og:title" content="Monster Hunter Wilds - Pre-order & Editions">
+        <meta property="og:description" content="Pre-order Monster Hunter Wilds and receive exclusive bonuses. Available in Standard, Deluxe, and Collector's editions.">
+        <meta property="og:image" content="https://monsterhunterwilds.org/static/logo.png">
+        <meta property="og:url" content="https://monsterhunterwilds.org/product">
+        <link rel="icon" href="static/favicon.ico" sizes="32x32"/>
+        <!-- Twitter Card tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Monster Hunter Wilds - Pre-order & Editions">
+        <meta name="twitter:description" content="Pre-order Monster Hunter Wilds and begin your legendary hunting journey.">
+        <meta name="twitter:image" content="https://monsterhunterwilds.org/static/images/product-twitter.jpg">
+        
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="static/logo.png" alt="Monster Hunter Wilds Logo">
+                </div>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/characters">Characters</a></li>
+                    <li><a href="/monsters">Monsters</a></li>
+                    <li><a href="/product">Product</a></li>
+                    <li><a href="/media">Media</a></li>
+                    <li><a href="/news">News</a></li>
+                    <li class="pre-order"><a href="#pre-order">Pre-order Now</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+           
+        </main>
+
+        <!-- 复用index.html的footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <img src="static/logo.png" alt="Monster Hunter Wilds Logo">
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/characters">Characters</a></li>
+                                <li><a href="/monsters">Monsters</a></li>
+                                <li><a href="/product">Product</a></li>
+                                <li><a href="/media">Media</a></li>
+                                <li><a href="/news">News</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Social Media</h3>
+                            <ul>
+                                <li><a href="#">Twitter</a></li>
+                                <li><a href="#">Facebook</a></li>
+                                <li><a href="#">Instagram</a></li>
+                                <li><a href="#">YouTube</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Support</h3>
+                            <ul>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Monster Hunter Wilds. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // 添加滚动动画
+            document.addEventListener('DOMContentLoaded', function() {
+                const fadeElements = document.querySelectorAll('.fade-in');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                });
+
+                fadeElements.forEach(element => {
+                    observer.observe(element);
+                });
+            });
+        </script>
+    </body>
+</html> 
