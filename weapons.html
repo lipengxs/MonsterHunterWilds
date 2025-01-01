@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Characters - Monster Hunter Wilds</title>
+        <meta name="description" content="Meet the characters of Monster Hunter Wilds. Learn about the hunters, companions, and NPCs that will aid you on your journey through the Forbidden Lands.">
+        <meta name="keywords" content="Monster Hunter Wilds characters, Alma, Gemma, Nata, Athos, Olivia, Erik, Fabius, Werner, monster hunter NPCs, hunting companions">
+        <link rel="icon" href="static/favicon.ico" sizes="32x32"/>
+        <!-- Open Graph tags -->
+        <meta property="og:title" content="Characters - Monster Hunter Wilds">
+        <meta property="og:description" content="Discover the legendary hunters and remarkable personalities who will shape your journey through the mysterious Forbidden Lands. Meet Alma, Gemma, Werner, and other key characters who will aid your adventure.">
+        <meta property="og:image" content="https://monsterhunterwilds.org/static/images/characters-bg.jpg">
+        <meta property="og:url" content="https://monsterhunterwilds.org/characters">
+        
+        <!-- Twitter Card tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Characters - Monster Hunter Wilds">
+        <meta name="twitter:description" content="Meet the legendary hunters and remarkable personalities who will shape your journey through the Forbidden Lands. Each character brings unique abilities and expertise to your adventure.">
+        <meta name="twitter:image" content="https://monsterhunterwilds.org/static/images/characters-bg.jpg">
+        
+        <link rel="stylesheet" href="static/base.css?v=1.0.2">
+        <script src="static/weapons.js?v=1.0.2"></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="static/logo.png" alt="Monster Hunter Wilds Logo">
+                </div>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/characters">Characters</a></li>
+                    <li><a href="/monsters">Monsters</a></li>
+                    <li><a href="/product">Product</a></li>
+                    <li><a href="/media">Media</a></li>
+                    <li><a href="/news">News</a></li>
+                    <li class="pre-order"><a href="#pre-order">Pre-order Now</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="weapons-overview">
+                <div class="container" style="padding-top: 100px;">
+                    <h1>Weapons in Monster Hunter Wilds</h1>
+                    <p>Monster Hunter Wilds features 14 unique weapon types, each with its own distinct playstyle, moveset, and mechanics. Whether you prefer quick, agile weapons or heavy-hitting powerhouses, there's a weapon type for every hunter.</p>
+                    <p>The weapons are divided into three main categories:</p>
+                    <div class="weapon-categories">
+                        <div class="category">
+                            <h3>Melee Weapons</h3>
+                            <p>Close-range weapons that excel in direct combat, featuring both light and heavy options.</p>
+                        </div>
+                        <div class="category">
+                            <h3>Technical Weapons</h3>
+                            <p>Weapons with complex mechanics that reward mastery and precise timing.</p>
+                        </div>
+                        <div class="category">
+                            <h3>Ranged Weapons</h3>
+                            <p>Long-range options that allow hunters to attack from a safe distance.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="weapon-cards">
+                <div class="container">
+                    <h2>Available Weapons</h2>
+                    <div class="cards-grid" id="weaponsContainer">
+                        <!-- Weapon cards will be dynamically generated here -->
+                    </div>
+                </div>
+            </section>
+
+            <style>
+                .weapons-overview {
+                    padding: 60px 0;
+                    background: #f5f5f5;
+                }
+
+                .weapon-categories {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 30px;
+                    margin-top: 40px;
+                }
+
+                .category {
+                    padding: 20px;
+                    background: white;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                }
+
+                .weapon-cards {
+                    padding: 60px 0;
+                }
+
+                .cards-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                    gap: 30px;
+                    margin-top: 40px;
+                }
+
+                .weapon-card {
+                    background: white;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                    transition: transform 0.3s ease;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .weapon-card:hover {
+                    transform: translateY(-5px);
+                }
+
+                .weapon-image {
+                    width: 100%;
+                    padding-top: 100%; /* Create a square aspect ratio container */
+                    position: relative;
+                    overflow: hidden;
+                    background: #f5f5f5;
+                }
+
+                .weapon-image img {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain; /* Changed from cover to contain */
+                    padding: 20px; /* Add some padding around the image */
+                }
+
+                .weapon-info {
+                    padding: 20px;
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .weapon-info h3 {
+                    margin: 0 0 10px 0;
+                    font-size: 1.5em;
+                    color: #333;
+                }
+
+                .weapon-info p {
+                    margin: 0;
+                    flex: 1;
+                    line-height: 1.5;
+                    color: #666;
+                }
+
+                .weapon-stats {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 15px;
+                    padding-top: 15px;
+                    border-top: 1px solid #eee;
+                }
+
+                .guard-status {
+                    padding: 4px 8px;
+                    border-radius: 4px;
+                    background: #e0e0e0;
+                    font-size: 0.9em;
+                }
+
+                .watch-video {
+                    color: #e91e63;
+                    text-decoration: none;
+                    font-weight: 500;
+                }
+
+                .watch-video:hover {
+                    text-decoration: underline;
+                }
+            </style>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const weaponsContainer = document.getElementById('weaponsContainer');
+                    
+                    // Generate weapon cards
+                    for (let i = 1; i <= 14; i++) {
+                        const paddedNum = i.toString().padStart(2, '0');
+                        const weaponName = weapons[`w_${paddedNum}_name`].trim();
+                        const weaponText = weapons[`w_${paddedNum}_text`].replace(/\u003cbr\/\u003e\n/g, ' ').trim();
+                        const weaponImage =`w_${paddedNum}.png`;
+                        const weaponVideo = weapons[`w_${paddedNum}_youtube_id`];
+                        
+                        // Determine if weapon can guard (based on weapon type)
+                        const canGuard = ['Great Sword', 'Sword & Shield', 'Lance', 'Gunlance', 'Charge Blade', 'Heavy Bowgun']
+                            .includes(weaponName);
+                        
+                        const card = document.createElement('div');
+                        card.className = 'weapon-card';
+                        card.setAttribute('data-weapon', weaponName.toLowerCase().replace(/\s+/g, '-'));
+                        
+                        card.innerHTML = `
+                            <div class="weapon-image">
+                                <img src="static/images/weapons/${weaponImage}" alt="${weaponName}">
+                            </div>
+                            <div class="weapon-info">
+                                <h3>${weaponName}</h3>
+                                <p>${weaponText}</p>
+                                <div class="weapon-stats">
+                                    <span class="guard-status">${canGuard ? weapons.guard_on.trim() : weapons.guard_off.trim()}</span>
+                                    <a href="#" class="watch-video" data-video="${weaponVideo.trim()}">Watch Tutorial</a>
+                                </div>
+                            </div>
+                        `;
+                        
+                        weaponsContainer.appendChild(card);
+                    }
+                    
+                    // Add video popup functionality
+                    const videoLinks = document.querySelectorAll('.watch-video');
+                    videoLinks.forEach(link => {
+                        link.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const videoId = link.dataset.video;
+                            // Create and show video modal
+                            const modal = document.createElement('div');
+                            modal.className = 'video-modal';
+                            modal.innerHTML = `
+                                <div class="modal-content">
+                                    <span class="close-modal">&times;</span>
+                                    <iframe width="560" height="315" 
+                                        src="https://www.youtube.com/embed/${videoId}" 
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                            `;
+                            document.body.appendChild(modal);
+                            
+                            // Add modal styles
+                            const style = document.createElement('style');
+                            style.textContent = `
+                                .video-modal {
+                                    position: fixed;
+                                    top: 0;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    background: rgba(0,0,0,0.8);
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    z-index: 1000;
+                                }
+                                .modal-content {
+                                    position: relative;
+                                    padding: 20px;
+                                    background: white;
+                                    border-radius: 8px;
+                                }
+                                .close-modal {
+                                    position: absolute;
+                                    right: 10px;
+                                    top: 5px;
+                                    font-size: 24px;
+                                    cursor: pointer;
+                                }
+                            `;
+                            document.head.appendChild(style);
+                            
+                            // Close modal functionality
+                            const closeBtn = modal.querySelector('.close-modal');
+                            closeBtn.onclick = () => {
+                                modal.remove();
+                                style.remove();
+                            };
+                            modal.onclick = (e) => {
+                                if (e.target === modal) {
+                                    modal.remove();
+                                    style.remove();
+                                }
+                            };
+                        });
+                    });
+                });
+            </script>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <img src="static/logo.png" alt="Monster Hunter Wilds Logo">
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li><a href="/characters">Characters</a></li>
+                                <li><a href="/monsters">Monsters</a></li>
+                                <li><a href="/product">Product</a></li>
+                                <li><a href="/media">Media</a></li>
+                                <li><a href="/news">News</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Support</h3>
+                            <ul>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Monster Hunter Wilds. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Add smooth reveal animation on scroll
+            document.addEventListener('DOMContentLoaded', () => {
+                const cards = document.querySelectorAll('.character-card');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = 1;
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+
+                cards.forEach(card => {
+                    card.style.opacity = 0;
+                    card.style.transform = 'translateY(50px)';
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    observer.observe(card);
+                });
+            });
+        </script>
+    </body>
+</html>

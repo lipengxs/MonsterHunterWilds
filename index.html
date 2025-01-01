@@ -19,77 +19,13 @@
         <meta name="twitter:description" content="Join the hunt in Monster Hunter Wilds. Master 14 unique weapon types, explore vast landscapes, and face challenging monsters.">
         <meta name="twitter:image" content="https://monsterhunterwilds.org/static/images/twitter-card.jpg">
         
+        <link rel="stylesheet" href="static/base.css?v=1.0.2">
         <style>
-            /* Reset and base styles */
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-
-            body {
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                line-height: 1.6;
-                color: #333;
-                background-color: #f5f5f5;
-            }
 
             .container {
                 max-width: 1200px;
                 margin: 0 auto;
                 padding: 0 20px;
-            }
-
-            /* Header styles */
-            header {
-                background-color: rgba(0, 0, 0, 0.9);
-                position: fixed;
-                width: 100%;
-                z-index: 1000;
-                padding: 15px 0;
-            }
-
-            nav {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 20px;
-            }
-
-            .logo img {
-                height: 50px;
-            }
-
-            nav ul {
-                display: flex;
-                list-style: none;
-                gap: 30px;
-            }
-
-            nav a {
-                color: #fff;
-                text-decoration: none;
-                font-weight: 500;
-                transition: color 0.3s ease;
-            }
-
-            nav a:hover {
-                color: #ffd700;
-            }
-
-            .pre-order a {
-                background-color: #ffd700;
-                color: #000;
-                padding: 10px 20px;
-                border-radius: 25px;
-                font-weight: bold;
-            }
-
-            .pre-order a:hover {
-                background-color: #fff;
-                color: #000;
             }
 
             /* Hero section */
@@ -179,7 +115,10 @@
             /* About section */
             .about {
                 padding: 100px 0;
-                background-color: #fff;
+                background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                            url('static/images/bg_story.jpg') no-repeat center center;
+                background-size: cover;
+                color: #fff;
             }
 
             .about h2 {
@@ -220,60 +159,7 @@
                 color: #000;
             }
 
-            /* Footer styles */
-            footer {
-                background-color: #1a1a1a;
-                color: #fff;
-                padding: 60px 0 20px;
-            }
-
-            .footer-content {
-                display: grid;
-                grid-template-columns: 1fr 2fr;
-                gap: 40px;
-                margin-bottom: 40px;
-            }
-
-            .footer-logo img {
-                height: 60px;
-                margin-bottom: 20px;
-            }
-
-            .footer-links {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 30px;
-            }
-
-            .footer-column h3 {
-                color: #ffd700;
-                margin-bottom: 20px;
-                font-size: 1.2rem;
-            }
-
-            .footer-column ul {
-                list-style: none;
-            }
-
-            .footer-column ul li {
-                margin-bottom: 10px;
-            }
-
-            .footer-column a {
-                color: #fff;
-                text-decoration: none;
-                transition: color 0.3s ease;
-            }
-
-            .footer-column a:hover {
-                color: #ffd700;
-            }
-
-            .footer-bottom {
-                text-align: center;
-                padding-top: 20px;
-                border-top: 1px solid rgba(255, 255, 255, 0.1);
-            }
+           
 
             /* Responsive design */
             @media (max-width: 768px) {
@@ -336,24 +222,67 @@
 
             .weapons-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 30px;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 20px;
+                max-width: 1000px;
+                margin: 0 auto;
+                padding: 0 20px;
             }
 
             .weapon-card {
-                text-align: center;
-                padding: 20px;
-                transition: transform 0.3s ease;
+                position: relative;
+                display: flex;
+                align-items: center;
+                padding: 15px;
+                background: linear-gradient(145deg, #ffffff, #f0f0f0);
+                border-radius: 10px;
+                box-shadow: 5px 5px 10px rgba(0,0,0,0.1),
+                           -5px -5px 10px rgba(255,255,255,0.8);
+                transition: all 0.3s ease;
+                cursor: pointer;
             }
 
             .weapon-card:hover {
-                transform: translateY(-5px);
+                transform: translateY(-3px);
+                box-shadow: 8px 8px 15px rgba(0,0,0,0.15),
+                           -8px -8px 15px rgba(255,255,255,0.9);
             }
 
-            .weapon-card img {
+            .weapon-icon {
+                width: 43px;
+                height: 42px;
+                padding: 8px;
+                background: #fff;
+                border-radius: 8px;
+                margin-right: 12px;
+                box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1),
+                           inset -2px -2px 5px rgba(255,255,255,0.8);
+            }
+
+            .weapon-icon img {
                 width: 100%;
-                max-width: 200px;
-                margin-bottom: 20px;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            .weapon-name {
+                font-size: 0.9rem;
+                font-weight: 600;
+                color: #333;
+                margin: 0;
+                flex-grow: 1;
+            }
+
+            @media (max-width: 768px) {
+                .weapons-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 480px) {
+                .weapons-grid {
+                    grid-template-columns: 1fr;
+                }
             }
 
             /* Monsters section */
@@ -592,6 +521,184 @@
                     text-align: center;
                 }
             }
+
+            /* World section */
+            .world {
+                padding: 100px 0;
+                background-color: #fff;
+            }
+
+            .region-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .region-card {
+                background: #f8f8f8;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+            }
+
+            .region-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .region-card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+
+            .region-card h3 {
+                color: #333;
+                margin-bottom: 15px;
+                font-size: 1.4rem;
+            }
+
+            .region-card p {
+                font-size: 1.2rem;
+                color: #666;
+                margin-bottom: 20px;
+            }
+
+            .region-features {
+                list-style: none;
+                padding: 0;
+            }
+
+            .region-features li {
+                color: #666;
+                margin-bottom: 10px;
+                padding-left: 20px;
+                position: relative;
+            }
+
+            .region-features li:before {
+                content: "•";
+                color: #ffd700;
+                position: absolute;
+                left: 0;
+            }
+
+            .environment-features {
+                margin-top: 50px;
+                background: #f8f8f8;
+                padding: 30px;
+                border-radius: 10px;
+            }
+
+            .feature-columns {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 30px;
+                margin-top: 30px;
+            }
+
+            .feature-column h4 {
+                color: #333;
+                font-size: 1.2rem;
+                margin-bottom: 15px;
+                padding-bottom: 10px;
+                border-bottom: 2px solid #ffd700;
+            }
+
+            .feature-column ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .feature-column li {
+                color: #666;
+                margin-bottom: 10px;
+                padding-left: 20px;
+                position: relative;
+                font-size: 1rem;
+            }
+
+            .feature-column li:before {
+                content: "→";
+                color: #ffd700;
+                position: absolute;
+                left: 0;
+            }
+
+            @media (max-width: 1024px) {
+                .feature-columns {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 768px) {
+                .region-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .feature-columns {
+                    grid-template-columns: 1fr;
+                }
+
+                .region-card img {
+                    height: 150px;
+                }
+            }
+
+            /* Multiplayer section */
+            .multiplayer {
+                padding: 100px 0;
+                background-color: #f9f9f9;
+            }
+
+            .feature-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+                padding: 0 20px;
+            }
+
+            .feature-card {
+                text-align: center;
+                padding: 30px;
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
+            .feature-card h3 {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+                color: #000;
+            }
+
+            .feature-card p {
+                font-size: 1.2rem;
+                color: #666;
+            }
+
+            .social-features {
+                margin-top: 30px;
+            }
+
+            .social-features h3 {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+                color: #000;
+            }
+
+            .social-features ul {
+                list-style: disc;
+                padding-left: 20px;
+            }
+
+            .social-features li {
+                font-size: 1.2rem;
+                color: #666;
+                margin-bottom: 10px;
+            }
         </style>
     </head>
     <body>
@@ -691,19 +798,93 @@
 
             <section id="weapons" class="weapons">
                 <div class="container">
-                    <h2>Weapon Types</h2>
+                    <h2>Master Your Arsenal</h2>
+                    <p>Choose from 14 unique weapon types, each offering distinct playstyles and strategic possibilities.</p>
                     <div class="weapons-grid">
                         <div class="weapon-card">
-                            <img src="static/weapons/great-sword.png" alt="Great Sword">
-                            <h3>Great Sword</h3>
-                            <p>A powerful weapon that excels at dealing massive damage with charged attacks.</p>
+                            <div class="weapon-icon">
+                                <img src="static/images/weapons/great-sword_ic.png" alt="Great Sword">
+                            </div>
+                            <h3 class="weapon-name">Great Sword</h3>
                         </div>
                         <div class="weapon-card">
-                            <img src="static/weapons/dual-blades.png" alt="Dual Blades">
-                            <h3>Dual Blades</h3>
-                            <p>Fast-hitting weapons that allow for quick, fluid movements and rapid attacks.</p>
+                            <div class="weapon-icon">
+                                <img src="static/images/weapons/long-sword_ic.png" alt="Long Sword">
+                            </div>
+                            <h3 class="weapon-name">Long Sword</h3>
                         </div>
-                        <!-- Add more weapon cards -->
+                        <div class="weapon-card">
+                            <div class="weapon-icon">
+                                <img src="static/images/weapons/sword-and-shield_ic.png" alt="Sword & Shield">
+                            </div>
+                            <h3 class="weapon-name">Sword & Shield</h3>
+                        </div>
+                        <div class="weapon-card">
+                            <div class="weapon-icon">
+                                <img src="static/images/weapons/dual-blades_ic.png" alt="Dual Blades">
+                            </div>
+                            <h3 class="weapon-name">Dual Blades</h3>
+                        </div>
+                        <div class="weapon-card">
+                            <div class="weapon-icon">
+                                <img src="static/images/weapons/hammer_ic.png" alt="Hammer">
+                            </div>
+                            <h3 class="weapon-name">Hammer</h3>
+                        </div>
+                        <div class="weapon-card">
+                            <div class="weapon-icon">
+                                <img src="static/images/weapons/hunting-horn_ic.png" alt="Hunting Horn">
+                            </div>
+                            <h3 class="weapon-name">Hunting Horn</h3>
+                        </div>
+                        <div class="weapon-card">
+                            <div class="weapon-icon">
+                                <img src="static/images/weapons/lance_ic.png" alt="Lance">
+                            </div>
+                            <h3 class="weapon-name">Lance</h3>
+                        </div>
+                        <div class="weapon-card">
+                            <div class="weapon-icon">
+                                <img src="static/images/weapons/gunlance_ic.png" alt="Gunlance">
+                            </div>
+                            <h3 class="weapon-name">Gunlance</h3>
+                        </div>
+                        <div class="weapon-card">
+                            <div class="weapon-icon">
+                                <img src="static/images/weapons/switch-axe_ic.png" alt="Switch Axe">
+                            </div>
+                            <h3 class="weapon-name">Switch Axe</h3>
+                        </div>
+                        <div class="weapon-card">
+                            <div class="weapon-icon">
+                                <img src="static/images/weapons/charge-blade_ic.png" alt="Charge Blade">
+                            </div>
+                            <h3 class="weapon-name">Charge Blade</h3>
+                        </div>
+                        <div class="weapon-card">
+                            <div class="weapon-icon">
+                                <img src="static/images/weapons/insect-glaive_ic.png" alt="Insect Glaive">
+                            </div>
+                            <h3 class="weapon-name">Insect Glaive</h3>
+                        </div>
+                        <div class="weapon-card">
+                            <div class="weapon-icon">
+                                <img src="static/images/weapons/bow_ic.png" alt="Bow">
+                            </div>
+                            <h3 class="weapon-name">Bow</h3>
+                        </div>
+                        <div class="weapon-card">
+                            <div class="weapon-icon">
+                                <img src="static/images/weapons/light-bowgun_ic.png" alt="Light Bowgun">
+                            </div>
+                            <h3 class="weapon-name">Light Bowgun</h3>
+                        </div>
+                        <div class="weapon-card">
+                            <div class="weapon-icon">
+                                <img src="static/images/weapons/heavy-bowgun_ic.png" alt="Heavy Bowgun">
+                            </div>
+                            <h3 class="weapon-name">Heavy Bowgun</h3>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -711,16 +892,194 @@
             <section id="monsters" class="monsters">
                 <div class="container">
                     <h2>Fearsome Creatures</h2>
-                    <div class="monsters-grid">
-                        <div class="monster-card">
-                            <img src="static/monsters/monster1.png" alt="Ancient Dragon">
-                            <div class="monster-info">
-                                <h3>Ancient Dragon</h3>
-                                <p class="monster-type">Elder Dragon</p>
-                                <p>A legendary creature that commands the power of storms. Its presence alone can alter weather patterns.</p>
+                    <p>Face off against a diverse roster of magnificent beasts in their natural habitats.</p>
+                    
+                    <div class="monster-card">
+                        <img src="https://monsterhunterwilds.wiki.fextralife.com/file/Monster-Hunter-Wilds/ancient_dragon_monster_hunter_wilds_wiki_guide_300px.jpg" alt="Ancient Dragon">
+                        <div class="monster-info">
+                            <h3>Ancient Dragon</h3>
+                            <p class="monster-type">Elder Dragon</p>
+                            <p>A legendary creature that commands the power of storms. This elder dragon can create powerful tempests and manipulate lightning, making it one of the most formidable threats in the Forbidden Lands. Its presence alone can alter weather patterns across entire regions.</p>
+                        </div>
+                    </div>
+
+                    <div class="monster-card">
+                        <img src="https://monsterhunterwilds.wiki.fextralife.com/file/Monster-Hunter-Wilds/frost_wolf_monster_hunter_wilds_wiki_guide_300px.jpg" alt="Frost Wolf">
+                        <div class="monster-info">
+                            <h3>Frost Wolf</h3>
+                            <p class="monster-type">Fanged Beast</p>
+                            <p>A pack-hunting predator that rules the snowy regions. These intelligent creatures coordinate their attacks and use the environment to their advantage, making them especially dangerous in groups. They've developed unique hunting strategies that involve using ice and snow to trap their prey.</p>
+                        </div>
+                    </div>
+
+                    <div class="monster-card">
+                        <img src="https://monsterhunterwilds.wiki.fextralife.com/file/Monster-Hunter-Wilds/crystal_wyvern_monster_hunter_wilds_wiki_guide_300px.jpg" alt="Crystal Wyvern">
+                        <div class="monster-info">
+                            <h3>Crystal Wyvern</h3>
+                            <p class="monster-type">Flying Wyvern</p>
+                            <p>A majestic flying wyvern with crystalline growths on its body. It can harness the power of light through its crystals to create dazzling attacks that can blind and disorient hunters. The crystals also serve as natural armor, requiring hunters to carefully target weak points.</p>
+                        </div>
+                    </div>
+
+                    <div class="monster-card">
+                        <img src="https://monsterhunterwilds.wiki.fextralife.com/file/Monster-Hunter-Wilds/thunder_serpent_monster_hunter_wilds_wiki_guide_300px.jpg" alt="Thunder Serpent">
+                        <div class="monster-info">
+                            <h3>Thunder Serpent</h3>
+                            <p class="monster-type">Leviathan</p>
+                            <p>A massive serpentine creature that channels electricity through its body. During storms, it becomes particularly aggressive, using the heightened electrical activity to power up its attacks. Hunters must be careful of its ability to create electromagnetic fields that can disable equipment.</p>
+                        </div>
+                    </div>
+
+                    <div class="monster-card">
+                        <img src="https://monsterhunterwilds.wiki.fextralife.com/file/Monster-Hunter-Wilds/forest_stalker_monster_hunter_wilds_wiki_guide_300px.jpg" alt="Forest Stalker">
+                        <div class="monster-info">
+                            <h3>Forest Stalker</h3>
+                            <p class="monster-type">Fanged Wyvern</p>
+                            <p>A cunning predator that uses the dense foliage of the Scarlet Forest for ambush attacks. Its scales can change color to match its surroundings, and it's known to set up elaborate traps using vines and fallen trees. Most dangerous during the twilight hours when visibility is poor.</p>
+                        </div>
+                    </div>
+
+                    <div class="monster-card">
+                        <img src="https://monsterhunterwilds.wiki.fextralife.com/file/Monster-Hunter-Wilds/crystal_elder_monster_hunter_wilds_wiki_guide_300px.jpg" alt="Crystal Elder">
+                        <div class="monster-info">
+                            <h3>Crystal Elder</h3>
+                            <p class="monster-type">Elder Dragon</p>
+                            <p>An ancient elder dragon that has developed a symbiotic relationship with the Crystal Caverns. It can control the crystalline formations in its territory, using them both as weapons and armor. Its presence causes crystals to grow at an accelerated rate, permanently changing the landscape of its habitat.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="world" class="world">
+                <div class="container">
+                    <h2>The Forbidden Lands</h2>
+                    <p>Explore vast, interconnected regions each with their own unique ecosystems and challenges.</p>
+                    
+                    <div class="region-grid">
+                        <div class="region-card">
+                            <img src="https://monsterhunterwilds.wiki.fextralife.com/file/Monster-Hunter-Wilds/windward_plains_area_monster_hunter_wilds_wiki_guide.jpg" alt="Windward Plains">
+                            <h3>Windward Plains</h3>
+                            <p>A sprawling grassland where powerful winds shape the landscape. Home to agile flying wyverns and herds of herbivores. The weather can shift dramatically, creating dangerous storm conditions that affect both hunters and monsters. During the Plenty state, the plains burst with life and resources are abundant.</p>
+                            <ul class="region-features">
+                                <li>Dynamic wind patterns affect movement and combat</li>
+                                <li>Seasonal migrations of monster herds</li>
+                                <li>Natural shelters from extreme weather</li>
+                            </ul>
+                        </div>
+
+                        <div class="region-card">
+                            <img src="https://monsterhunterwilds.wiki.fextralife.com/file/Monster-Hunter-Wilds/scarlet_forest_area_monster_hunter_wilds_wiki_guide.jpg" alt="Scarlet Forest">
+                            <h3>Scarlet Forest</h3>
+                            <p>An ancient woodland with towering crimson trees. The dense canopy creates a unique ecosystem where arboreal monsters thrive. The forest floor is home to dangerous predators that use the environment for ambush attacks. The forest changes dramatically between day and night.</p>
+                            <ul class="region-features">
+                                <li>Vertical exploration using grappling points</li>
+                                <li>Bioluminescent flora at night</li>
+                                <li>Complex food chain interactions</li>
+                            </ul>
+                        </div>
+
+                        <div class="region-card">
+                            <img src="https://monsterhunterwilds.wiki.fextralife.com/file/Monster-Hunter-Wilds/crystal_caverns_area_monster_hunter_wilds_wiki_guide.jpg" alt="Crystal Caverns">
+                            <h3>Crystal Caverns</h3>
+                            <p>A network of underground caves filled with bioluminescent crystals. The crystalline formations affect monster behavior and can be used tactically during hunts. Some areas feature unique environmental hazards that both help and hinder hunters.</p>
+                            <ul class="region-features">
+                                <li>Crystal resonance affects monster behavior</li>
+                                <li>Underground rivers for rapid travel</li>
+                                <li>Crystal-powered mechanisms</li>
+                            </ul>
+                        </div>
+
+                        <div class="region-card">
+                            <img src="https://monsterhunterwilds.wiki.fextralife.com/file/Monster-Hunter-Wilds/frost_peaks_area_monster_hunter_wilds_wiki_guide.jpg" alt="Frost Peaks">
+                            <h3>Frost Peaks</h3>
+                            <p>Snow-covered mountains where only the hardiest creatures survive. Hunters must manage their stamina and temperature while tracking monsters through deep snow and treacherous ice formations. Avalanches and blizzards can dramatically alter the landscape.</p>
+                            <ul class="region-features">
+                                <li>Temperature management system</li>
+                                <li>Dynamic snow deformation</li>
+                                <li>Ice cave networks</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="environment-features">
+                        <h3>Dynamic Environment Features</h3>
+                        <div class="feature-columns">
+                            <div class="feature-column">
+                                <h4>Weather System</h4>
+                                <ul>
+                                    <li>Dynamic storms affect visibility and movement</li>
+                                    <li>Lightning strikes can create temporary hazards</li>
+                                    <li>Wind affects projectile weapons</li>
+                                    <li>Rain creates new gathering opportunities</li>
+                                </ul>
+                            </div>
+                            <div class="feature-column">
+                                <h4>Day/Night Cycle</h4>
+                                <ul>
+                                    <li>Different monsters appear at various times</li>
+                                    <li>Unique night-only gathering spots</li>
+                                    <li>Changed monster behavior patterns</li>
+                                    <li>Special night events and phenomena</li>
+                                </ul>
+                            </div>
+                            <div class="feature-column">
+                                <h4>Interactive Elements</h4>
+                                <ul>
+                                    <li>Destructible environments</li>
+                                    <li>Natural traps and hazards</li>
+                                    <li>Climbable surfaces</li>
+                                    <li>Environmental puzzles</li>
+                                </ul>
+                            </div>
+                            <div class="feature-column">
+                                <h4>Endemic Life</h4>
+                                <ul>
+                                    <li>Helper creatures provide buffs</li>
+                                    <li>Rare species with unique effects</li>
+                                    <li>Ecosystem indicators</li>
+                                    <li>Collectible field guide entries</li>
+                                </ul>
                             </div>
                         </div>
-                        <!-- Add more monster cards -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="multiplayer" class="multiplayer">
+                <div class="container">
+                    <h2>Hunt Together</h2>
+                    <p>Team up with hunters worldwide in seamless multiplayer experiences.</p>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h3>Drop-in Co-op</h3>
+                            <p>Join or host hunting parties of up to 4 players at any time. The difficulty scales dynamically based on party size, ensuring balanced challenges for all group compositions.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3>Cross-Platform Play</h3>
+                            <p>Hunt with friends regardless of their platform choice. Full cross-play support between PS5, Xbox Series X|S, and PC platforms, with shared progress and rewards.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3>Hunting Guilds</h3>
+                            <p>Create or join a guild to coordinate hunts, share resources, and compete in special guild-exclusive events. Guild halls serve as social hubs where players can showcase their achievements.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <h3>Special Events</h3>
+                            <p>Participate in limited-time events featuring unique monsters, exclusive rewards, and challenging quests. Community events bring hunters together for massive collaborative hunts.</p>
+                        </div>
+                    </div>
+
+                    <div class="social-features">
+                        <h3>Social Features</h3>
+                        <ul>
+                            <li>Built-in Voice Chat: Communicate easily with your hunting party</li>
+                            <li>Quick Join System: Find groups quickly with smart matchmaking</li>
+                            <li>Photo Mode: Capture and share your epic hunting moments</li>
+                            <li>Training Area: Practice with weapons and strategies together</li>
+                        </ul>
                     </div>
                 </div>
             </section>
