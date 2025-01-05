@@ -7,6 +7,8 @@
         <meta name="description" content="Experience Monster Hunter Wilds, the ultimate action RPG from Capcom. Hunt magnificent creatures in dynamic environments, craft powerful gear, and explore the mysterious Forbidden Lands.">
         <meta name="keywords" content="Monster Hunter Wilds, monster hunting game, action RPG, Capcom games, Forbidden Lands">
         <link rel="icon" href="static/favicon.ico" sizes="32x32"/>
+        <!-- Canonical -->
+        <link rel="canonical" href="https://monsterhunterwilds.org">
         <!-- Open Graph tags -->
         <meta property="og:title" content="Monster Hunter Wilds - The Ultimate Monster Hunting Experience">
         <meta property="og:description" content="Join the hunt in Monster Hunter Wilds. Master 14 unique weapon types, explore vast landscapes, and face challenging monsters in this groundbreaking action RPG.">
@@ -17,9 +19,20 @@
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Monster Hunter Wilds - The Ultimate Monster Hunting Experience">
         <meta name="twitter:description" content="Join the hunt in Monster Hunter Wilds. Master 14 unique weapon types, explore vast landscapes, and face challenging monsters.">
-        <meta name="twitter:image" content="https://monsterhunterwilds.org/static/images/twitter-card.jpg">
+        <meta name="twitter:image" content="https://monsterhunterwilds.org/static/logo.png">
         
-        <link rel="stylesheet" href="static/base.css?v=1.0.2">
+    <!-- Microsoft Validation -->
+    <meta name="msvalidate.01" content="B362957FC36C5EDDD6079B6D78330424">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NJYFN6CYK8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NJYFN6CYK8');
+    </script>
+        <link rel="stylesheet" href="static/base.css?v=1.0.3">
         <style>
 
             .container {
@@ -144,22 +157,32 @@
             .feature {
                 text-align: center;
                 padding: 30px;
-                background: #f8f8f8;
-                border-radius: 10px;
-                transition: transform 0.3s ease;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 15px;
+                transition: transform 0.3s ease, background 0.3s ease;
             }
 
             .feature:hover {
                 transform: translateY(-5px);
+                background: rgba(255, 255, 255, 0.15);
             }
 
             .feature h3 {
                 font-size: 1.5rem;
                 margin-bottom: 15px;
-                color: #000;
+                color: #ffd700;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
             }
 
-           
+            .feature p {
+                color: #fff;
+                font-size: 1.1rem;
+                line-height: 1.6;
+                margin: 0;
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+            }
 
             /* Responsive design */
             @media (max-width: 768px) {
@@ -224,9 +247,7 @@
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
                 gap: 20px;
-                max-width: 1000px;
                 margin: 0 auto;
-                padding: 0 20px;
             }
 
             .weapon-card {
@@ -240,6 +261,7 @@
                            -5px -5px 10px rgba(255,255,255,0.8);
                 transition: all 0.3s ease;
                 cursor: pointer;
+                text-decoration: none;
             }
 
             .weapon-card:hover {
@@ -257,6 +279,7 @@
                 margin-right: 12px;
                 box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1),
                            inset -2px -2px 5px rgba(255,255,255,0.8);
+                flex-shrink: 0;
             }
 
             .weapon-icon img {
@@ -709,12 +732,11 @@
                 </div>
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="/characters">Characters</a></li>
-                    <li><a href="/monsters">Monsters</a></li>
-                    <li><a href="/product">Product</a></li>
+                    <li><a href="/characters">Characters</a></li> 
+                    <li><a href="/weapons">Weapons</a></li> 
                     <li><a href="/media">Media</a></li>
                     <li><a href="/news">News</a></li>
-                    <li class="pre-order"><a href="#pre-order">Pre-order Now</a></li>
+                    <li class="pre-order"><a href="/product">Pre-order Now</a></li>
                 </ul>
             </nav>
         </header>
@@ -744,8 +766,7 @@
                         </div>
 
                         <div class="cta-buttons">
-                            <a href="#" class="cta-btn primary">Pre-order Now</a>
-                            <a href="https://www.monsterhunter.com/wilds/demo/" class="cta-btn secondary">Try Demo</a>
+                            <a href="/product" class="cta-btn primary">Pre-order Now</a>
                         </div>
                     </div>
                 </div>
@@ -801,94 +822,94 @@
                     <h2>Master Your Arsenal</h2>
                     <p>Choose from 14 unique weapon types, each offering distinct playstyles and strategic possibilities.</p>
                     <div class="weapons-grid">
-                        <div class="weapon-card">
+                        <a href="/weapons/great-sword" class="weapon-card">
                             <div class="weapon-icon">
                                 <img src="static/images/weapons/great-sword_ic.png" alt="Great Sword">
                             </div>
                             <h3 class="weapon-name">Great Sword</h3>
-                        </div>
-                        <div class="weapon-card">
+                        </a>
+                        <a href="/weapons/long-sword" class="weapon-card">
                             <div class="weapon-icon">
                                 <img src="static/images/weapons/long-sword_ic.png" alt="Long Sword">
                             </div>
                             <h3 class="weapon-name">Long Sword</h3>
-                        </div>
-                        <div class="weapon-card">
+                        </a>
+                        <a href="/weapons/sword-and-shield" class="weapon-card">
                             <div class="weapon-icon">
                                 <img src="static/images/weapons/sword-and-shield_ic.png" alt="Sword & Shield">
                             </div>
                             <h3 class="weapon-name">Sword & Shield</h3>
-                        </div>
-                        <div class="weapon-card">
+                        </a>
+                        <a href="/weapons/dual-blades" class="weapon-card">
                             <div class="weapon-icon">
                                 <img src="static/images/weapons/dual-blades_ic.png" alt="Dual Blades">
                             </div>
                             <h3 class="weapon-name">Dual Blades</h3>
-                        </div>
-                        <div class="weapon-card">
+                        </a>
+                        <a href="/weapons/hammer" class="weapon-card">
                             <div class="weapon-icon">
                                 <img src="static/images/weapons/hammer_ic.png" alt="Hammer">
                             </div>
                             <h3 class="weapon-name">Hammer</h3>
-                        </div>
-                        <div class="weapon-card">
+                        </a>
+                        <a href="/weapons/hunting-horn" class="weapon-card">
                             <div class="weapon-icon">
                                 <img src="static/images/weapons/hunting-horn_ic.png" alt="Hunting Horn">
                             </div>
                             <h3 class="weapon-name">Hunting Horn</h3>
-                        </div>
-                        <div class="weapon-card">
+                        </a>
+                        <a href="/weapons/lance" class="weapon-card">
                             <div class="weapon-icon">
                                 <img src="static/images/weapons/lance_ic.png" alt="Lance">
                             </div>
                             <h3 class="weapon-name">Lance</h3>
-                        </div>
-                        <div class="weapon-card">
+                        </a>
+                        <a href="/weapons/gunlance" class="weapon-card">
                             <div class="weapon-icon">
                                 <img src="static/images/weapons/gunlance_ic.png" alt="Gunlance">
                             </div>
                             <h3 class="weapon-name">Gunlance</h3>
-                        </div>
-                        <div class="weapon-card">
+                        </a>
+                        <a href="/weapons/switch-axe" class="weapon-card">
                             <div class="weapon-icon">
                                 <img src="static/images/weapons/switch-axe_ic.png" alt="Switch Axe">
                             </div>
                             <h3 class="weapon-name">Switch Axe</h3>
-                        </div>
-                        <div class="weapon-card">
+                        </a>
+                        <a href="/weapons/charge-blade" class="weapon-card">
                             <div class="weapon-icon">
                                 <img src="static/images/weapons/charge-blade_ic.png" alt="Charge Blade">
                             </div>
                             <h3 class="weapon-name">Charge Blade</h3>
-                        </div>
-                        <div class="weapon-card">
+                        </a>
+                        <a href="/weapons/insect-glaive" class="weapon-card">
                             <div class="weapon-icon">
                                 <img src="static/images/weapons/insect-glaive_ic.png" alt="Insect Glaive">
                             </div>
                             <h3 class="weapon-name">Insect Glaive</h3>
-                        </div>
-                        <div class="weapon-card">
+                        </a>
+                        <a href="/weapons/bow" class="weapon-card">
                             <div class="weapon-icon">
                                 <img src="static/images/weapons/bow_ic.png" alt="Bow">
                             </div>
                             <h3 class="weapon-name">Bow</h3>
-                        </div>
-                        <div class="weapon-card">
+                        </a>
+                        <a href="/weapons/light-bowgun" class="weapon-card">
                             <div class="weapon-icon">
                                 <img src="static/images/weapons/light-bowgun_ic.png" alt="Light Bowgun">
                             </div>
                             <h3 class="weapon-name">Light Bowgun</h3>
-                        </div>
-                        <div class="weapon-card">
+                        </a>
+                        <a href="/weapons/heavy-bowgun" class="weapon-card">
                             <div class="weapon-icon">
                                 <img src="static/images/weapons/heavy-bowgun_ic.png" alt="Heavy Bowgun">
                             </div>
                             <h3 class="weapon-name">Heavy Bowgun</h3>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </section>
-
+            <!--
             <section id="monsters" class="monsters">
                 <div class="container">
                     <h2>Fearsome Creatures</h2>
@@ -1044,7 +1065,7 @@
                     </div>
                 </div>
             </section>
-
+-->
             <section id="multiplayer" class="multiplayer">
                 <div class="container">
                     <h2>Hunt Together</h2>
@@ -1163,7 +1184,7 @@
                             <h3>Quick Links</h3>
                             <ul>
                                 <li><a href="/characters">Characters</a></li>
-                                <li><a href="/monsters">Monsters</a></li>
+                                <li><a href="/weapons">Weapons</a></li> 
                                 <li><a href="/product">Product</a></li>
                                 <li><a href="/media">Media</a></li>
                                 <li><a href="/news">News</a></li>
@@ -1172,9 +1193,8 @@
                         <div class="footer-column">
                             <h3>Support</h3>
                             <ul>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Terms of Service</a></li>
+                                <li><a href="/privacy-policy">Privacy Policy</a></li>
+                                <li><a href="/terms-of-service">Terms of Service</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1185,6 +1205,5 @@
             </div>
         </footer>
 
-        <script src="static/scripts.js"></script>
     </body>
 </html>

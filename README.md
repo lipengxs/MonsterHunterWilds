@@ -1,67 +1,72 @@
-# Marvel Rivals
+# MonsterHunterWilds.org - Your Ultimate Monster Hunter Wilds Resource Hub
 
-Welcome to Marvel Rivals - The Ultimate Superhero Team-Based PvP Shooter!
+Welcome to MonsterHunterWilds.org - your comprehensive companion for exploring the mysterious Forbidden Lands!
 
-## 🌟 About The Game
+## 🌟 About The Site
 
-Marvel Rivals throws you into an epic conflict where Doctor Doom's actions have caused multiple realities to collide. Team up with or against iconic Marvel characters in intense 6v6 battles across destructible environments inspired by the Marvel universe.
+MonsterHunterWilds.org is dedicated to providing hunters with the most detailed and up-to-date information about Monster Hunter Wilds. From monster databases to hunting strategies, we're your one-stop destination for all things related to the latest entry in the Monster Hunter series.
 
 ## ✨ Key Features
 
-- 🎮 **Dynamic 6v6 Combat** - Master strategic team-based gameplay
-- 🌍 **Destructible Environments** - Experience fully interactive battlegrounds
-- 🦸‍♂️ **Iconic Heroes** - Choose from 20+ Marvel heroes and villains
-- 🤝 **Team Synergies** - Combine unique abilities for devastating effects
-- 🌐 **Cross-Platform** - Play with friends across all platforms
+- 📚 **Complete Monster Database** - Detailed information about all monsters
+- 🗺️ **Interactive World Map** - Comprehensive guides for all locations
+- 💡 **Advanced Hunting Guides** - Master the new hunting mechanics
+- 🌪️ **Weather System Guide** - Understanding the three climate states
+- 🤝 **Multiplayer Resources** - Cross-platform hunting guides
 
-## 🎯 Game Modes
+## 🎯 Site Sections
 
-- Team Deathmatch
-- Objective Control
-- Special Event Modes
-- More modes coming post-launch!
+### Monster Database
+- Complete monster ecology information
+- Weakness and resistance charts
+- Drop rates and material guides
+- Pack behavior patterns
 
-## 📱 Promotional Content
+### Location Guides
+- Windward Plains
+- Scarlet Forest
+- Oilwell Basin
+- Interactive resource maps
 
-### Main Launch Copy
-Join Marvel Rivals - The ultimate 6v6 superhero team-based shooter! Fight alongside iconic Marvel heroes like Iron Man and Captain America in epic battles across destructible environments. Free to play, launching December 2024 on all platforms! #MarvelRivals #MarvelGaming
+### Hunting Mechanics
+- Dual weapon system guide
+- Seikret companion mechanics
+- Pack hunting strategies
+- Environmental hazard tactics
 
-### Beta Test Promotion
-Want early access to Marvel Rivals' thrilling battles? Beta testing begins April 2024! Register on our official website now to secure your spot and join players worldwide in this epic combat! #MarvelRivalsBeta
+### Game Features
+- Dynamic weather system
+- Cross-platform multiplayer
+- Enhanced Turf Wars
+- Seamless world exploration
 
-### Platform Availability
-- Steam: [Marvel Rivals on Steam](https://store.steampowered.com/app/2767030/Marvel_Rivals/)
-- PlayStation: [PlayStation Store](https://store.playstation.com/en-us/concept/10010451/)
-- Xbox: [Microsoft Store](https://www.microsoft.com/store/productid/9n8pmw7qmd3d)
-- Epic Games: [Epic Store](https://store.epicgames.com/p/marvel-rivals-182004)
+## 🎮 Game Information
 
-### Social Media Snippets
-- Build your ultimate hero team and showcase your tactical prowess in Marvel Rivals!
-- Experience the perfect blend of superpowers and strategy in unprecedented team combat!
-- Choose your hero and join the battle that will reshape the Marvel universe!
-- Free to play, infinite possibilities. Marvel Rivals, launching this December!
-
-## 💻 System Requirements
-
-Minimum Requirements:
-- Windows 10 64-bit
-- Intel i5/AMD Ryzen 5
-- 8GB RAM
-- NVIDIA GTX 1060/AMD RX 580
-
-## 🎮 Release Information
-
-- **Release Date:** December 6, 2024
-- **Beta Test:** Starting April 2024
-- **Price:** Free to Play
-- **Platforms:** PC, PlayStation, Xbox
+- **Release Date:** February 28, 2025
+- **Platforms:** 
+  - PlayStation 5
+  - Xbox Series X|S
+  - PC
 - **Cross-Platform Play:** Supported
+- **Game Type:** Action RPG
 
-## 📮 Connect With Us
+## 📱 Connect With Us
 
-- Official Website: [marvelrivals.net](https://marvelrivals.net)
-- Discord: [Join our community](https://discord.gg/marvelrivals)
+- Website: [monsterhunterwilds.org](https://monsterhunterwilds.org)
+- Discord: Coming Soon
+- Twitter: Coming Soon
+- Reddit: Coming Soon
+
+## 🌟 Join Our Community
+
+Be part of the most comprehensive Monster Hunter Wilds community:
+- Share hunting strategies
+- Discuss monster tactics
+- Find hunting partners
+- Stay updated with the latest news
 
 ---
 
-© 2024 Marvel Rivals. All rights reserved.
+© 2024 MonsterHunterWilds.org. All rights reserved.
+Monster Hunter Wilds™ is a trademark of CAPCOM CO., LTD.
+This is a fan site and is not affiliated with or endorsed by CAPCOM.
