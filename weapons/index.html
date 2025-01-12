@@ -129,13 +129,25 @@
                     border-radius: 12px;
                     overflow: hidden;
                     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                    transition: transform 0.3s ease;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
                     display: flex;
                     flex-direction: column;
+                    cursor: pointer;
                 }
 
                 .weapon-card:hover {
                     transform: translateY(-5px);
+                    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+                }
+
+                .weapon-card a {
+                    display: block;
+                    height: 100%;
+                }
+
+                .weapon-card .watch-video {
+                    position: relative;
+                    z-index: 2;
                 }
 
                 .weapon-image {
@@ -224,7 +236,13 @@
                         card.className = 'weapon-card';
                         card.setAttribute('data-weapon', weaponName.toLowerCase().replace(/\s+/g, '-'));
                         
-                        card.innerHTML = `
+                        // Create a link wrapper for the entire card
+                        const cardLink = document.createElement('a');
+                        cardLink.href = `/weapons/${weaponName.toLowerCase().replace(/\s+/g, '-')}`;
+                        cardLink.style.textDecoration = 'none';
+                        cardLink.style.color = 'inherit';
+                        
+                        cardLink.innerHTML = `
                             <div class="weapon-image">
                                 <img src="../static/images/weapons/${weaponImage}" alt="${weaponName}">
                             </div>
@@ -238,6 +256,7 @@
                             </div>
                         `;
                         
+                        card.appendChild(cardLink);
                         weaponsContainer.appendChild(card);
                     }
                     
