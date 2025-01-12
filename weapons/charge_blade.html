@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Charge Blade - Monster Hunter Wilds</title>
+        <meta name="description" content="Master the Charge Blade in Monster Hunter Wilds. Learn about phial charging, guard points, and SAED techniques.">
+        <meta name="keywords" content="Monster Hunter Wilds Charge Blade, CB guide, Monster Hunter weapons, MH Wilds CB, Charge Blade mechanics, SAED">
+        <link rel="icon" href="../static/favicon.ico" sizes="32x32"/>
+        <link rel="canonical" href="https://monsterhunterwilds.org/weapons/charge_blade">
+        
+        <!-- Open Graph tags -->
+        <meta property="og:title" content="Charge Blade - Monster Hunter Wilds">
+        <meta property="og:description" content="Master the Charge Blade in Monster Hunter Wilds. Transform between sword and shield and axe modes while managing phials.">
+        <meta property="og:image" content="https://monsterhunterwilds.org/static/images/weapons/w_10.png">
+        <meta property="og:url" content="https://monsterhunterwilds.org/weapons/charge_blade">
+        
+        <!-- Twitter Card tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Charge Blade - Monster Hunter Wilds">
+        <meta name="twitter:description" content="Learn the art of wielding the Charge Blade in Monster Hunter Wilds. Master guard points and devastating SAED attacks.">
+        <meta name="twitter:image" content="https://monsterhunterwilds.org/static/images/weapons/w_10.png">
+        
+        <link rel="stylesheet" href="../static/base.css?v=1.0.2">
+        <style>
+            .weapon-header {
+                background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../static/images/weapons/w_10_bg.jpg');
+                background-size: cover;
+                background-position: center;
+                color: white;
+                padding: 100px 0;
+                text-align: center;
+                margin-bottom: 50px;
+            }
+
+            .weapon-content {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            .weapon-overview {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                margin-bottom: 50px;
+            }
+
+            .weapon-image {
+                text-align: center;
+            }
+
+            .weapon-image img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+
+            .weapon-stats {
+                background: #f8f9fa;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            }
+
+            .stat-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                margin-top: 20px;
+            }
+
+            .stat-item {
+                text-align: center;
+                padding: 15px;
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            }
+
+            .stat-label {
+                font-size: 0.9em;
+                color: #666;
+                margin-bottom: 5px;
+            }
+
+            .stat-value {
+                font-size: 1.2em;
+                font-weight: bold;
+                color: #333;
+            }
+
+            .weapon-mechanics {
+                margin: 50px 0;
+            }
+
+            .mechanics-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+                margin-top: 30px;
+            }
+
+            .mechanic-card {
+                background: white;
+                padding: 25px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+
+            .video-section {
+                margin: 50px 0;
+                text-align: center;
+            }
+
+            .video-container {
+                position: relative;
+                padding-bottom: 56.25%;
+                height: 0;
+                overflow: hidden;
+                max-width: 800px;
+                margin: 0 auto;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+
+            .video-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+
+            .tips-section {
+                background: #f8f9fa;
+                padding: 50px 0;
+                margin: 50px 0;
+            }
+
+            .tips-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 30px;
+                margin-top: 30px;
+            }
+
+            .tip-card {
+                background: white;
+                padding: 25px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+
+            .tip-card h4 {
+                color: #2c3e50;
+                margin-bottom: 15px;
+            }
+
+            .phial-system {
+                margin: 30px 0;
+                padding: 20px;
+                background: #e8f5e9;
+                border-radius: 10px;
+                border-left: 4px solid #4caf50;
+            }
+
+            .phial-system h3 {
+                color: #2e7d32;
+                margin-bottom: 15px;
+            }
+
+            .phial-types {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+                margin-top: 20px;
+                padding: 15px;
+                background: rgba(255,255,255,0.5);
+                border-radius: 8px;
+            }
+
+            .phial-type {
+                text-align: center;
+                padding: 15px;
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            }
+
+            .phial-type h4 {
+                color: #2e7d32;
+                margin-bottom: 10px;
+            }
+
+            .mode-switch {
+                display: flex;
+                justify-content: space-around;
+                margin: 30px 0;
+                padding: 20px;
+                background: #f5f5f5;
+                border-radius: 10px;
+            }
+
+            .mode {
+                text-align: center;
+                padding: 20px;
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                flex: 1;
+                margin: 0 10px;
+            }
+
+            .mode h4 {
+                color: #2c3e50;
+                margin-bottom: 10px;
+            }
+
+            .guard-points {
+                margin: 30px 0;
+                padding: 20px;
+                background: #fff3e0;
+                border-radius: 10px;
+                border-left: 4px solid #ff9800;
+            }
+
+            .guard-points h3 {
+                color: #e65100;
+                margin-bottom: 15px;
+            }
+
+            .guard-points-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+                margin-top: 20px;
+            }
+
+            .guard-point {
+                background: white;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            }
+
+            .guard-point h4 {
+                color: #e65100;
+                margin-bottom: 10px;
+            }
+
+            @media (max-width: 768px) {
+                .weapon-overview {
+                    grid-template-columns: 1fr;
+                }
+                
+                .mode-switch {
+                    flex-direction: column;
+                }
+                
+                .mode {
+                    margin: 10px 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="../static/logo.png" alt="Monster Hunter Wilds Logo">
+                </div>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/characters">Characters</a></li> 
+                    <li><a href="/weapons">Weapons</a></li> 
+                    <li><a href="/media">Media</a></li>
+                    <li><a href="/news">News</a></li>
+                    <li class="pre-order"><a href="/product">Pre-order Now</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="weapon-header">
+                <div class="weapon-content">
+                    <h1>Charge Blade</h1>
+                    <p>Master the art of charging phials and unleashing devastating elemental discharges</p>
+                </div>
+            </section>
+
+            <div class="weapon-content">
+                <section class="weapon-overview">
+                    <div class="weapon-image">
+                        <img src="../static/images/weapons/w_10.png" alt="Charge Blade">
+                    </div>
+                    <div class="weapon-stats">
+                        <h2>Weapon Characteristics</h2>
+                        <p>A technical weapon that transforms between sword & shield and axe modes. Store energy in phials through sword attacks, then unleash devastating elemental discharges in axe mode.</p>
+                        
+                        <div class="stat-grid">
+                            <div class="stat-item">
+                                <div class="stat-label">Attack Speed</div>
+                                <div class="stat-value">★★★☆☆</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Damage Output</div>
+                                <div class="stat-value">★★★★★</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Guard Capability</div>
+                                <div class="stat-value">★★★★★</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-label">Technical Difficulty</div>
+                                <div class="stat-value">★★★★★</div>
+                            </div>
+                        </div>
+
+                        <div class="mode-switch">
+                            <div class="mode">
+                                <h4>Sword & Shield Mode</h4>
+                                <p>Mobile defensive stance with phial charging capabilities</p>
+                            </div>
+                            <div class="mode">
+                                <h4>Axe Mode</h4>
+                                <p>Powerful offensive form for unleashing charged phials</p>
+                            </div>
+                        </div>
+
+                        <div class="phial-system">
+                            <h3>Phial System</h3>
+                            <p>The Charge Blade's phial system allows you to store energy from sword attacks and release it in powerful bursts through axe mode attacks.</p>
+                            
+                            <div class="phial-types">
+                                <div class="phial-type">
+                                    <h4>Impact Phial</h4>
+                                    <p>Deals KO damage when hitting monster heads</p>
+                                </div>
+                                <div class="phial-type">
+                                    <h4>Element Phial</h4>
+                                    <p>Amplifies elemental damage output</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="guard-points">
+                            <h3>Guard Point System</h3>
+                            <p>Specific animations during weapon transforms provide enhanced blocking capabilities and counter-attack opportunities.</p>
+                            
+                            <div class="guard-points-list">
+                                <div class="guard-point">
+                                    <h4>Morph Guard Point</h4>
+                                    <p>During sword to axe transformation</p>
+                                </div>
+                                <div class="guard-point">
+                                    <h4>Roundslash Guard Point</h4>
+                                    <p>At the end of Roundslash attack</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="weapon-mechanics">
+                    <h2>Core Mechanics</h2>
+                    <div class="mechanics-grid">
+                        <div class="mechanic-card">
+                            <h3>Phial Management</h3>
+                            <p>Charge phials through sword attacks, store them with R2+Circle, and unleash them through various axe mode attacks. Overcharged phials will cause your attacks to bounce.</p>
+                        </div>
+                        <div class="mechanic-card">
+                            <h3>Super/Ultra Burst</h3>
+                            <p>Super Amped Element Discharge (SAED) is your most powerful attack, consuming all phials for massive damage. Can be canceled into a regular AED for more controlled bursts.</p>
+                        </div>
+                        <div class="mechanic-card">
+                            <h3>Guard Points</h3>
+                            <p>Special blocking animations that provide increased guard capability and can lead directly into counter-attacks. Master these for optimal defensive play.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="video-section">
+                    <h2>Weapon Tutorial</h2>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/hvlVtfSzO2Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </section>
+
+                <section class="tips-section">
+                    <div class="weapon-content">
+                        <h2>Pro Tips & Strategies</h2>
+                        <div class="tips-grid">
+                            <div class="tip-card">
+                                <h4>Phial Management</h4>
+                                <p>Keep your phials charged but avoid overcharging. Use sword mode to build charge safely, and store phials when your shield glows red.</p>
+                            </div>
+                            <div class="tip-card">
+                                <h4>Guard Point Timing</h4>
+                                <p>Practice guard point timings in the training area. The morph animation from sword to axe mode is the most commonly used guard point.</p>
+                            </div>
+                            <div class="tip-card">
+                                <h4>SAED Positioning</h4>
+                                <p>Position yourself carefully before unleashing SAED, as the attack has a long animation. Aim for the head with Impact Phials for potential KOs.</p>
+                            </div>
+                            <div class="tip-card">
+                                <h4>Shield Charge</h4>
+                                <p>Keep your shield charged for increased guard capability and access to SAED. Cancel an SAED into an AED by holding back and Triangle during the windup.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <img src="../static/logo.png" alt="Monster Hunter Wilds Logo">
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li><a href="/characters">Characters</a></li>
+                                <li><a href="/weapons">Weapons</a></li>
+                                <li><a href="/product">Product</a></li>
+                                <li><a href="/media">Media</a></li>
+                                <li><a href="/news">News</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Support</h3>
+                            <ul>
+                                <li><a href="/privacy-policy">Privacy Policy</a></li>
+                                <li><a href="/terms-of-service">Terms of Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Monster Hunter Wilds. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html> 
