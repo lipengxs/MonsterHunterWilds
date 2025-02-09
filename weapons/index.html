@@ -227,6 +227,7 @@
                         const weaponText = weapons[`w_${paddedNum}_text`].replace(/\u003cbr\/\u003e\n/g, ' ').trim();
                         const weaponImage =`w_${paddedNum}.png`;
                         const weaponVideo = weapons[`w_${paddedNum}_youtube_id`];
+                        const weaponPath = weapons[`w_${paddedNum}_url`];
                         
                         // Determine if weapon can guard (based on weapon type)
                         const canGuard = ['Great Sword', 'Sword & Shield', 'Lance', 'Gunlance', 'Charge Blade', 'Heavy Bowgun']
@@ -238,7 +239,7 @@
                         
                         // Create a link wrapper for the entire card
                         const cardLink = document.createElement('a');
-                        cardLink.href = `/weapons/${weaponName.toLowerCase().replace(/\s+/g, '-')}`;
+                        cardLink.href = `/weapons/${weaponPath}`;
                         cardLink.style.textDecoration = 'none';
                         cardLink.style.color = 'inherit';
                         

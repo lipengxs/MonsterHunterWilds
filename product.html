@@ -430,8 +430,14 @@
                 padding: 4rem 0;
             }
 
+            .game-intro h2 {
+                text-align: center;
+                margin-bottom: 2rem;
+                color: #2c3e50;
+            }
+
             .intro-content {
-                max-width: 800px;
+                max-width: 1200px;
                 margin: 0 auto;
                 text-align: center;
                 font-size: 1.2rem;
@@ -440,9 +446,9 @@
 
             /* Platform Selection Styles */
             .platform-selection {
-                background: #000;
+                background: #f5f5f5;
                 padding: 6rem 0;
-                color: white;
+                color: #333;
             }
 
             .platform-tabs {
@@ -452,34 +458,13 @@
                 margin-bottom: 4rem;
             }
 
-            .platform-tab {
-                cursor: pointer;
-                padding: 1rem 2rem;
-                border: 2px solid rgba(255,255,255,0.2);
-                border-radius: 10px;
-                transition: all 0.3s ease;
-                opacity: 0.6;
-            }
-
-            .platform-tab:hover {
-                opacity: 1;
-                border-color: var(--secondary-color);
-            }
-
-            .platform-tab.active {
-                opacity: 1;
-                border-color: var(--secondary-color);
-                background: rgba(255,255,255,0.1);
-            }
-
-            .platform-tab img {
-                height: 40px;
-                width: auto;
-            }
-
             .platform-content {
                 display: none;
                 animation: fadeIn 0.5s ease;
+                background: #ffffff;
+                border-radius: 20px;
+                padding: 2rem;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             }
 
             .platform-content.active {
@@ -500,19 +485,21 @@
             }
 
             .edition-item {
-                background: rgba(255,255,255,0.05);
+                background: #ffffff;
                 border-radius: 15px;
                 padding: 2rem;
-                backdrop-filter: blur(10px);
-                transition: transform 0.3s ease;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                border: 1px solid #eaeaea;
             }
 
             .edition-item:hover {
                 transform: translateY(-10px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
             }
 
             .edition-title {
-                color: var(--secondary-color);
+                color: #2c3e50;
                 font-size: 1.8rem;
                 margin-bottom: 1rem;
                 text-align: center;
@@ -534,12 +521,12 @@
                 margin-bottom: 0.8rem;
                 padding-left: 1.5rem;
                 position: relative;
-                color: #ccc;
+                color: #4a4a4a;
             }
 
             .edition-features li::before {
-                content: "✓";
-                color: var(--secondary-color);
+                content: "・";
+                color: #e74c3c;
                 position: absolute;
                 left: 0;
             }
@@ -548,16 +535,17 @@
                 display: inline-block;
                 width: 100%;
                 padding: 1rem;
-                background: var(--primary-color);
+                background: #e74c3c;
                 color: white;
                 text-align: center;
                 text-decoration: none;
                 border-radius: 25px;
                 transition: all 0.3s ease;
+                font-weight: 600;
             }
 
             .edition-button:hover {
-                background: #ff1a1a;
+                background: #c0392b;
                 transform: translateY(-2px);
             }
 
@@ -582,6 +570,66 @@
                     width: 200px;
                     text-align: center;
                 }
+            }
+
+            .platform-bonus {
+                color: #e74c3c !important;
+                font-weight: bold;
+                margin-top: 1rem;
+            }
+
+            .deluxe-header, .premium-header {
+                color: #e74c3c !important;
+                font-weight: bold;
+                margin-top: 1rem;
+            }
+
+            .premium-btn {
+                background: linear-gradient(45deg, #e74c3c, #c0392b);
+            }
+
+            .premium-btn:hover {
+                background: linear-gradient(45deg, #c0392b, #a93226);
+            }
+
+            .edition-item.premium {
+                border: 2px solid #e74c3c;
+            }
+
+            .details-button {
+                display: block;
+                margin: 1rem auto;
+                padding: 0.5rem 2rem;
+                background: transparent;
+                border: 1px solid #e74c3c;
+                color: #e74c3c;
+                border-radius: 20px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                font-weight: 500;
+            }
+
+            .details-button:hover {
+                background: #e74c3c;
+                color: white;
+            }
+
+            .release-note {
+                font-style: italic;
+                color: #777;
+                font-size: 0.9em;
+                margin: 0.5rem 0;
+            }
+
+            .ps-exclusive, .xbox-exclusive, .steam-exclusive {
+                color: #e74c3c !important;
+                font-weight: bold;
+            }
+
+            .section-title {
+                color: #2c3e50;
+                text-align: center;
+                margin-bottom: 2rem;
             }
         </style>
         <footer>
